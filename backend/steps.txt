@@ -1,0 +1,34 @@
+1- at this point if we send :
+{
+    "email": "mohsen.ansari.wtf@gmail.com",
+    "name":"mohsen",
+    "password":"aaa???123A",
+    "re_password":"aaa???123A"
+} to :
+http://localhost:8000/auth/users/ ,
+we can register the new user who will get an email immidieatly
+
+2- user will get an email in which there are "uid" and "token":
+http://localhost:8000/activate/MQ/cglmbh-74cf6cb1aa8a7aa7ee4fd7711a1b6e60
+if we post this :
+{
+    "uid":"MQ",
+    "token":"cglmbh-74cf6cb1aa8a7aa7ee4fd7711a1b6e60"
+} to :
+http://localhost:8000/auth/users/activation/?Content-Type=application/json ,
+we activate our account, get an email and also we can sign in our account :
+
+3 - if we post :
+{
+    "email":"mohsen.ansari.wtf@gmail.com",
+    "password":"aaa???123A"
+} to :
+http://localhost:8000/auth/jwt/create/?Content-Type=application/json ,
+we get refresh and access tokens
+
+4- we can then use the refresh token to get a new one. sending :
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczMTg1ODY1NSwiaWF0IjoxNzMxNzcyMjU1LCJqdGkiOiI0MWFlMWU2ZWI2ODA0ODI5YjRiMWNlYTkzNzlkYzFjMSIsInVzZXJfaWQiOjF9.nLYcuuWqh8khhis9wPlGatv1J26r9BzG8-Q0_3NZthQ"
+} to :
+http://localhost:8000/auth/jwt/refresh/?Content-Type=application/json ,
+we'll get a new refresh token
