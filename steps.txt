@@ -32,3 +32,13 @@ we get refresh and access tokens
 } to :
 http://localhost:8000/auth/jwt/refresh/?Content-Type=application/json ,
 we'll get a new refresh token
+
+==================================================================
+first Implement all the codings
+build the react app
+copy the build directory inside main backend app
+run both of the apps
+try to login with a user's credentials
+
+
+
