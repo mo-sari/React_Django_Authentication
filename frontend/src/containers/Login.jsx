@@ -42,16 +42,16 @@ const Login = ({ login, isAuthenticated }) => {
   //   } catch (err) {}
   // };
 
-  // if (isAuthenticated) {
-  //   return <Redirect to="/" />;
-  // }
+  if (isAuthenticated) {
+    return <button onClick={() => navigate("/")}>Go to Home</button>;
+  }
 
   return (
     <div className="container mt-5">
       <h1>Sign In</h1>
       <p>Sign into your Account</p>
       <form onSubmit={(e) => onSubmit(e)}>
-        <div className="form-group">
+        <div className="form-group mb-1">
           <input
             className="form-control"
             type="email"
@@ -62,7 +62,7 @@ const Login = ({ login, isAuthenticated }) => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="form-group mb-1">
           <input
             className="form-control"
             type="password"
@@ -95,8 +95,8 @@ const Login = ({ login, isAuthenticated }) => {
   );
 };
 
-// const mapStateToProps = (state) => ({
-//   isAuthenticated: state.auth.isAuthenticated,
-// });
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
 
-export default connect(null, { login })(Login);
+export default connect(mapStateToProps, { login })(Login);
