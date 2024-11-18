@@ -40,5 +40,8 @@ copy the build directory inside main backend app
 run both of the apps
 try to login with a user's credentials
 
-
-
+==================================================================
+install social-auth-app-django
+update settings
+follow the settings in this link for OAuth(https://www.youtube.com/watch?v=XaRDg56h3bo&list=PL-lwbotZANgQbX43i5CG7Km7uCDvvV2bd&index=4)
+see extra updates in git commit
