@@ -24,7 +24,7 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route
-              path="/password/reset/confirm/:uid/:token"
+              path="/password-reset/confirm/:uid/:token"
               element={<ResetPasswordConfirm />}
             />
             <Route path="/activate/:uid/:token" element={<Activate />} />
